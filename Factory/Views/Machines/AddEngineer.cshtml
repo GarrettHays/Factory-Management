@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h1>ASSIGN TO ENGINEER:</h1>
+
+<h4>Add the @Html.DisplayFor(model => model.Name) to an Engineer's work list.</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.MachineId)
+
+  @Html.Label("Select Engineer: ")
+  @Html.DropDownList("EngineerId")
+
+  <input class = "saveicon" type="image" img src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-save-5040600.png" style="width:20px;">
+}
+
+<p>@Html.ActionLink("Back to Machines", "Index", null, null, new { @class="htmlButton"}) </p>
