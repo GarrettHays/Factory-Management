@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h1>ENGINEER DETAILS:</h1>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This Engineer is not working on any Machines. Click "Assign to Machine" to assign to a Machine.</p>
+}
+else
+{
+  <h4>Machines the Engineer is working on:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    @using (Html.BeginForm("DeleteMachine", "Engineers"))
+    {
+      @Html.Hidden("joinId", @join.EngineerMachineId)
+      <li>@join.Machine.Name
+      <input type="image" class = "engineertrashicon" img src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-trash-can-2342129.png" style="width:20px;"/></li>
+    }
+  }
+  </ul>
+}
+
+<p>
+@Html.ActionLink("Edit Engineer", "Edit", null, new { id = Model.EngineerId }, new { @class ="htmlButton"}) |
+@Html.ActionLink("Assign to Machine", "AddMachine", new { id = Model.EngineerId }, new { @class ="htmlButton"})
+</p>
