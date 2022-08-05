@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SillyStringz Factory</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/FactoryStyles.css">
+  </head>
+  <body>
+    <div class = "header">
+    <h3><a href="@Url.Action("Index", "Main", null)"><img src="https://raw.githubusercontent.com/GarrettHays/images/main/toplogo.jpg"  style="width: 400px;"></a></h3>
+    <h7 id="navbar">@Html.ActionLink("See all Engineers", "Index", "Engineers") | @Html.ActionLink("See all Machines", "Index", "Machines")</h7></div>
+    <div class="container">
+    @RenderBody()
+    </div>
+  </body>
+</html>
