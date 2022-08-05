@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Food Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/FactoryStyles.css">
+  </head>
+  <body>
+     <div id="mainpage">
+      <img src="https://raw.githubusercontent.com/GarrettHays/images/main/sillyfactory.jpg" alt="factory logo" class="logo"> 
+      <div class ="blurbcontain"
+        <h2 id="blurb">Our Engineers and Machines work hard - some hardly work.</h2> 
+        <h2 id="blurb">This tool allows you to see which Engineers we currently have on staff, as well as which Machines they are currently working on.</h2> 
+        <h2 id="blurb">If you need to hire and add new Engineers, or spin up new Machines - you can do that too!</h2> 
+     </div>
+      <p>
+        @Html.ActionLink("See all Engineers", "Index", "Engineers", null, new { @class="htmlButtonMain"})
+        @Html.ActionLink("See all Machines", "Index", "Machines", null, new { @class="htmlButtonMain"})
+      </p>
+     </div>
+  </body>
+</html>
